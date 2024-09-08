@@ -4,10 +4,13 @@ import java.time.LocalDate;
 
 import jakarta.validation.constraints.Size;
 
-//database
 
 public class TodoAppli {
 
+	public TodoAppli() {
+		
+	}
+	
 	public TodoAppli(int id, String username, String description, LocalDate targetDate, boolean done) {
 		super();
 		this.id = id;
@@ -17,12 +20,14 @@ public class TodoAppli {
 		this.done = done;
 	}
 
+//	@Id
+//	@GeneratedValue
 	private int id;
+
 	private String username;
 	
-	@Size(min=10, message="Enter at least 10 characters")
+	@Size(min=10, message="Enter atleast 10 characters")
 	private String description;
-
 	private LocalDate targetDate;
 	private boolean done;
 
@@ -41,10 +46,6 @@ public class TodoAppli {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	public Object getTargetDate() {
-		return targetDate;
-	}
 
 	public String getDescription() {
 		return description;
@@ -54,6 +55,9 @@ public class TodoAppli {
 		this.description = description;
 	}
 
+	public LocalDate getTargetDate() {
+		return targetDate;
+	}
 
 	public void setTargetDate(LocalDate targetDate) {
 		this.targetDate = targetDate;
@@ -69,7 +73,7 @@ public class TodoAppli {
 
 	@Override
 	public String toString() {
-		return "TodoApp [id=" + id + ", username=" + username + ", description=" + description + ", targetDate="
+		return "Todo [id=" + id + ", username=" + username + ", description=" + description + ", targetDate="
 				+ targetDate + ", done=" + done + "]";
 	}
 

@@ -1,10 +1,13 @@
 <html>
 
 	<head>
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 		<title>login page</title>
 	</head>
 
 	<body>
+		<%@ include file="common/navigation.jspf" %>
+		
 		
 		<div class="container">
 		
