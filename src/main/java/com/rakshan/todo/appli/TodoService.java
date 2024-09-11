@@ -14,15 +14,15 @@ public class TodoService {
 	
 	private static List<TodoAppli> todos = new ArrayList<>();
 	
-	private static int todosCount= 0;
+	private static int todosCount = 0;
 	
 	static {
-		todos.add(new TodoAppli(todosCount++, "rakshan", "learn springboot", 
-				LocalDate.now().plusYears(1), true));
-		todos.add(new TodoAppli(todosCount++, "rakshan", "learn devops and get certified", 
-				LocalDate.now().plusYears(2), false));
-		todos.add(new TodoAppli(todosCount++, "rakshan", "full stack", 
-				LocalDate.now().plusYears(3), true));
+		todos.add(new TodoAppli(++todosCount, "in28minutes","Get AWS Certified 1", 
+							LocalDate.now().plusYears(1), false ));
+		todos.add(new TodoAppli(++todosCount, "in28minutes","Learn DevOps 1", 
+				LocalDate.now().plusYears(2), false ));
+		todos.add(new TodoAppli(++todosCount, "in28minutes","Learn Full Stack Development 1", 
+				LocalDate.now().plusYears(3), false ));
 	}
 	
 	public List<TodoAppli> findByUsername(String username){
@@ -32,12 +32,13 @@ public class TodoService {
 	}
 	
 	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
-		TodoAppli todo = new TodoAppli(++todosCount, username, description, targetDate, done);
+		TodoAppli todo = new TodoAppli(++todosCount,username,description,targetDate,done);
 		todos.add(todo);
 	}
 	
 	public void deleteById(int id) {
-		
+		//todo.getId() == id
+		// todo -> todo.getId() == id
 		Predicate<? super TodoAppli> predicate = todo -> todo.getId() == id;
 		todos.removeIf(predicate);
 	}
@@ -49,7 +50,6 @@ public class TodoService {
 	}
 
 	public void updateTodo(@Valid TodoAppli todo) {
-		
 		deleteById(todo.getId());
 		todos.add(todo);
 	}

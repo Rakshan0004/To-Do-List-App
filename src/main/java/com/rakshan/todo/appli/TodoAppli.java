@@ -2,9 +2,22 @@ package com.rakshan.todo.appli;
 
 import java.time.LocalDate;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
+//Database (MySQL) 
+//Static List of todos => Database (H2, MySQL)
 
+//JPA
+// Bean -> Database Table
+//
+@Entity(name = "Todo")
 public class TodoAppli {
 
 	public TodoAppli() {
@@ -20,13 +33,13 @@ public class TodoAppli {
 		this.done = done;
 	}
 
-//	@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue
 	private int id;
 
 	private String username;
 	
-	@Size(min=10, message="Enter atleast 10 characters")
+	@Size(min=3, message="Enter atleast 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
