@@ -1,5 +1,3 @@
-![to-do-list-app-project-1](https://github.com/user-attachments/assets/7270fa2c-959b-4410-a280-5529cd792774)
-
 
 # TODO APPLICATION
 A simple Todo application built using Spring Boot, H2 Database, and MySQL. This application allows users to manage their tasks, providing functionality to add, view, and delete todos.
